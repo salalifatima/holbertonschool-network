@@ -1,8 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+# Displays listening ports. Includes listening sockets
+# + as the PID and name of the program to which each socket belongs.
 
-echo "Active Internet connections (only servers)"
-sudo netstat -tunlp | grep LISTEN
-
-echo ""
-echo "Active UNIX domain sockets (only servers)"
-sudo netstat -lxp | grep LISTEN
+netstat -l --program
